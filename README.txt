@@ -1,5 +1,5 @@
 Windows batchfiles to help create video libraries with youtube-dl
-Downloads videos in the best available quality. For youtube videos with maximum resolution below, 480p downloads the "best" marked format and the best quality video stream.
+Downloads videos in the best available quality. For youtube videos with maximum resolution below 480p downloads the "best" marked format and the best quality video stream.
 
 
 Place youtube-dl.exe in the current folder.
