@@ -16,19 +16,19 @@ if not os.path.exists("cookies.txt"):
         cookies.close()
 if not os.path.exists("run.bat"):
     with open('run.bat', 'w+') as runyd:
-        runyd.writelines([r":a"+"\n", r"youtube-dl.exe -a ".\urls.txt" -i -o ".\videos\%%(title)s-%%(format_id)s-%%(width)s-%%(height)s-%%(id)s.%%(ext)s" -f "bestvideo[height>=480]+bestaudio/best+bestvideo" --merge-output-format "mkv" --ffmpeg-location ".\resources\ffmpegfolder\bin\ffmpeg.exe" --cookies ".\cookies.txt" --write-pages"+"\n", r"move.bat"+"\n", r"goto a"])
+        runyd.writelines([r":a"+"\n", "youtube-dl.exe -a \".\\urls.txt\" -i -o \".\\videos\\%%(title)s-%%(format_id)s-%%(width)s-%%(height)s-%%(id)s.%%(ext)s\" -f \"bestvideo[height>=480]+bestaudio/best+bestvideo\" --merge-output-format \"mkv\" --ffmpeg-location \".\resources\ffmpegfolder\bin\ffmpeg.exe\" --cookies \".\cookies.txt\" --write-pages"+"\n", r"move.bat"+"\n", r"goto a"])
 if not os.path.exists("run-nonyoutube.bat"):
     with open('run-nonyoutube.bat', 'w+') as rnny:
-        rnny.writelines([r":a"+"\n", r"youtube-dl.exe -a '.\urls-nonyoutube.txt' -i -o '.\videos\%%(title)s-%%(id)s.%%(ext)s' -f 'bestvideo+bestaudio/best' --merge-output-format 'mkv' --ffmpeg-location '.\resources\ffmpegfolder\bin\ffmpeg.exe' --cookies '.\cookies.txt' --write-pages"+"\n", r"move.bat"+"\n", r"goto a"])
+        rnny.writelines([r":a"+"\n", "youtube-dl.exe -a \".\\urls-nonyoutube.txt\" -i -o \".\\videos\\%%(title)s-%%(id)s.%%(ext)s\" -f \"bestvideo+bestaudio/best\" --merge-output-format \"mkv\" --ffmpeg-location \".\\resources\\ffmpegfolder\\bin\\ffmpeg.exe\" --cookies \".\\cookies.txt\" --write-pages"+"\n", r"move.bat"+"\n", r"goto a"])
 if not os.path.exists("rename.bat"):
     with open('rename.bat', 'w+') as renamer:
-        renamer.writelines([r"set _my_datetime=%date%_%time%"+"\n", r"set _my_datetime=%_my_datetime: =_%"+"\n", r"set _my_datetime=%_my_datetime::=%"+"\n", r"set _my_datetime=%_my_datetime:/=_%"+"\n", r"set _my_datetime=%_my_datetime:.=_%"+"\n", r"rename videos 'videos_%_my_datetime%'"])
+        renamer.writelines([r"set _my_datetime=%date%_%time%"+"\n", r"set _my_datetime=%_my_datetime: =_%"+"\n", r"set _my_datetime=%_my_datetime::=%"+"\n", r"set _my_datetime=%_my_datetime:/=_%"+"\n", r"set _my_datetime=%_my_datetime:.=_%"+"\n", r"rename videos \"videos_%_my_datetime%\""])
 if not os.path.exists("check.bat"):
     with open('check.bat', 'w+') as checker:
-        checker.writelines([r"youtube-dl.exe -a '.\urls.txt' -o '.\videos\%%(title)s-%%(format_id)s-%%(width)s-%%(height)s-%%(id)s.%%(ext)s' -f 'bestvideo[height>=480]+bestaudio/best+bestvideo' --merge-output-format 'mkv' --ffmpeg-location '.\resources\ffmpegfolder\bin\ffmpeg.exe' --cookies '.\cookies.txt' --write-pages"+"\n", r"move.bat"])
+        checker.writelines(["youtube-dl.exe -a \".\\urls.txt\" -o \".\\videos\\%%(title)s-%%(format_id)s-%%(width)s-%%(height)s-%%(id)s.%%(ext)s\" -f \"bestvideo[height>=480]+bestaudio/best+bestvideo\" --merge-output-format \"mkv\" --ffmpeg-location ".\\resources\\ffmpegfolder\\bin\\ffmpeg.exe\" --cookies \".\\cookies.txt\" --write-pages"+"\n", r"move.bat"])
 if not os.path.exists("move.bat"):
     with open('move.bat', 'w+') as mover:
-        mover.writelines([r"set _my_datetime=%date%_%time%"+"\n", r"set _my_datetime=%_my_datetime: =_%"+"\n", r"set _my_datetime=%_my_datetime::=%"+"\n", r"set _my_datetime=%_my_datetime:/=_%"+"\n", r"set _my_datetime=%_my_datetime:.=_%"+"\n", r"md dump_%_my_datetime%"+"\n", r"move '.\*.dump' '.\dump_%_my_datetime%\'"])
+        mover.writelines([r"set _my_datetime=%date%_%time%"+"\n", r"set _my_datetime=%_my_datetime: =_%"+"\n", r"set _my_datetime=%_my_datetime::=%"+"\n", r"set _my_datetime=%_my_datetime:/=_%"+"\n", r"set _my_datetime=%_my_datetime:.=_%"+"\n", r"md dump_%_my_datetime%"+"\n", "move \".\\*.dump\" \".\\dump_%_my_datetime%\\\""])
 if not os.path.exists("youtube-dl.exe"):
     import urllib.request
     ydlexe = urllib.request.urlopen('https://youtube-dl.org/downloads/latest/youtube-dl.exe')
