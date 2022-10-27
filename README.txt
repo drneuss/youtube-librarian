@@ -27,7 +27,7 @@ Intermediary pages are located in "dump_*" folder(s) for debugging.
 
 Just download this repository as a zip file, extract to preferred location and you're good to go! 
 
-
+Or use the files/binaries given in the releases.
 
 
 
