@@ -38,7 +38,7 @@ if not os.path.exists("videos"):
     os.makedirs("videos")
 if not os.path.exists("resources/ffmpegfolder"):
     os.makedirs("resources/ffmpegfolder")
-answer = input("Enter list of links in urls.txt for youtube videos and urls-nonyoutube.txt for non-youtube videos. Then press Y for youtube and N for non-youtube videos:")
+answer = input("Place program binary in empty folder for first run. If youtube-dl.exe is outdated, download latest version and place in program directory. Enter list of links in urls.txt for youtube videos and urls-nonyoutube.txt for non-youtube videos. Place FFMPEG binaries in /resources/ffmpegfolder/. Edit cookies.txt file if necessary. If aforementioned steps are complete, then press Y for youtube and N for non-youtube videos:")
 if answer == "Y":
     os.system("run.bat")
 #list current directory
