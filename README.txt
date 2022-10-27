@@ -34,6 +34,8 @@ Or use the files/binaries given in the releases.
 
 2022-07-18                                                         Dr Neuss
 
+Date-time code by Rory(user 8479) from Stackoverflow.com (Thank You!)
+
 youtube-dl                                                      v2021.12.17
 
 DOWNLOAD                                            https://youtube-dl.org/
